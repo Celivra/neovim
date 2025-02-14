@@ -4,12 +4,24 @@ if not status then
 	return
 end
 
-vim.api.nvim_create_autocmd("VimEnter", {
+--vim.api.nvim_create_autocmd("VimEnter", {
+--  callback = function()
+--    require("nvim-tree.api").tree.open()
+--	vim.cmd("wincmd l")
+--  end
+--})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
   callback = function()
-    require("nvim-tree.api").tree.open()
-	vim.cmd("wincmd l")
+    -- 获取当前打开的窗口数量
+    local wins = vim.api.nvim_tabpage_list_wins(0)
+    if #wins == 1 and vim.bo.filetype == "NvimTree" then
+      vim.cmd("quit")  -- 只有 NvimTree 剩下时，自动退出 Neovim
+    end
   end
 })
+
 
 nvim_tree.setup({
   sort_by = "case_sensitive",
