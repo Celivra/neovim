@@ -30,4 +30,17 @@ lspconfig.lua_ls.setup({
   end,
 })
 
+
+
+-- ast-grep 配置
+lspconfig.ast_grep.setup({
+  on_attach = function(client, bufnr)
+    -- 设置一些键绑定
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", {})
+  end,
+})
+
+
 require("mason").setup()
+require("lspconfig").ast_grep.setup({})

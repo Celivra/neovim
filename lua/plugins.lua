@@ -17,5 +17,13 @@ require("lazy").setup({
 
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" }
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "neovim/nvim-lspconfig" },  -- LSP 配置插件
+  	{ "hrsh7th/nvim-cmp" },       -- 补全插件
+  	{ "hrsh7th/cmp-nvim-lsp" },   -- nvim-cmp 和 LSP 配合
+  	{ "hrsh7th/cmp-buffer" },     -- 补全缓冲区
+  	{ "hrsh7th/cmp-path" },       -- 补全路径
+  	{ "saadparwaiz1/cmp_luasnip" }, -- 补全 LuaSnip
+  	{ "L3MON4D3/LuaSnip" },
+
 })
