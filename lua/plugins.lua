@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "nvim-lualine/lualine.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason.nvim" },
