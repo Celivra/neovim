@@ -27,4 +27,5 @@ require("lazy").setup({
   	{ "saadparwaiz1/cmp_luasnip" }, -- 补全 LuaSnip
   	{ "L3MON4D3/LuaSnip" },
 
+  	{ "jiangmiao/auto-pairs" },
 })

@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",  -- 对所有文件类型执行
   callback = function()
     vim.cmd('syntax match Function /\\w\\+\\ze(/')
+    vim.cmd('highlight Function guifg=#539eed')
   end,
 })
 
